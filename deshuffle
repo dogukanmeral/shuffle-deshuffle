@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ $# -eq 0 ]]; then
+    echo 'Error: Missing directory argument'
+    exit 0
+fi
+
+path=$1
+
+for file in "$path"*; do
+    original_name="${file#*-}"
+    mv "$file" "$original_name"
+done
