@@ -1,0 +1,5 @@
+#!/bin/bash
+
+chmod +x shuffle deshuffle
+sudo cp shuffle deshuffle /usr/bin
+exit 0
