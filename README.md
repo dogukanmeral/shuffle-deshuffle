@@ -3,7 +3,7 @@ shuffle filenames (in my case .mp3 files) for systems that has no shuffling abil
 
 ### usage
 `shuffle <folder_path>`
-adds 4 random digit at the start of the file name (0000-9999)
+adds random digits at the start of the file name (0-32767)
 Ex: default.txt -> 1234-default.txt
 
 `deshuffle <folder_path>`
