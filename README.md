@@ -2,11 +2,11 @@
 shuffle filenames (in my case .mp3 files) for systems that has no shuffling ability
 
 ### usage
-`shuffle <folder_path>`
+`shuffle -d <directory>`
 adds random digits at the start of the file name (0-32767)
 Ex: default.txt -> 1234-default.txt
 
-`deshuffle <folder_path>`
+`shuffle -r -d <directory>`
 reverts process
 Ex: 1234-default.txt -> default.txt
 
