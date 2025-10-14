@@ -1,5 +1,5 @@
 ### purpose
-shuffle filenames (in my case .mp3 files) for systems that has no shuffling ability 
+shuffle filenames (in my case .mp3 files) for systems that has no shuffling ability
 
 ### usage
 `shuffle <folder_path>`
@@ -11,5 +11,4 @@ reverts process
 Ex: 1234-default.txt -> default.txt
 
 ### installation
-`chmod +x shuffle deshuffle` for permission to run scripts
-`sudo cp shuffle deshuffle /usr/bin` to run scripts directly
+run `install` script with superuser (to copy files into /usr/bin)

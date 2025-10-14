@@ -1,5 +1,6 @@
 #!/bin/bash
 
-chmod +x shuffle deshuffle
-sudo cp shuffle deshuffle /usr/bin
+chmod +x shuffle && echo 'chmod +x shuffle'
+cp shuffle /usr/bin && echo 'cp shuffle /usr/bin'
+echo 'done!'
 exit 0

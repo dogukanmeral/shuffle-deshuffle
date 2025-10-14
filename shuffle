@@ -1,14 +1,55 @@
 #!/bin/bash
 
-if [[ $# -eq 0 ]]; then
-    echo 'Error: Missing directory argument'
+Help()
+{
+    echo 'usage: shuffle [-d DIRECTORY] [-r REVERT]'
+    echo
+    echo 'Shuffle file names by adding numbers(0-32767) in front'
+    echo
+    echo 'options:'
+    echo '-d: Directory which includes files to be shuffled'
+    echo '-r: Revert the shuffling process (remove numbers in front)'
+    echo '-h: Print help text'
+}
+
+while getopts ":h:rd:" opt
+do
+    case ${opt} in
+        h) Help
+        exit 0;;
+
+        r) revert=1
+        ;;
+
+        d) directory="$OPTARG"
+        ;;
+
+        \?) echo "Invalid option: -$OPTARG" >&2
+		Help
+		exit 1
+		;;
+    esac
+done
+
+if [ -z "$directory" ]; then
+	echo 'Missing -d [DIRECTORY] argument.' >&2
+	Help
+	exit 1
+fi
+
+directory="${directory%/}/"
+
+if [[ $revert -eq 1 ]]; then
+    echo "REVERT"
+    for file in "$directory"*; do
+        original_name="${file#*-}"
+        mv "$file" "$directory"/"$original_name"
+    done
     exit 0
 fi
 
-path=$1
-
-for file in "$path"*; do
+for file in "$directory"*; do
     base_name=$(basename "$file")
-    new_name="$path""$RANDOM"-"$base_name"
-    mv "$file" "$new_name"
+    new_name="$RANDOM"-"$base_name"
+    mv "$file" "$directory"/"$new_name"
 done
