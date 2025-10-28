@@ -1,3 +1,5 @@
+![demo](https://github.com/dogukanmeral/shuffle-deshuffle/blob/main/shuffle-deshuffle-demo.gif?raw=true)
+
 ### purpose
 shuffle filenames (in my case .mp3 files) for systems that has no shuffling ability
 
